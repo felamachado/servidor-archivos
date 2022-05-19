@@ -1,0 +1,12 @@
+---
+version: "3"
+services:
+    nginx:
+       image: nginx:latest
+       container_name: nginx-webserver
+       volumes:
+         - /home/carpeta-host:/usr/share/nginx/html
+       ports:
+         #81 es el puerto para el host, puede cambiarse.
+         - 81:80
+       restart: unless-stopped
